@@ -139,7 +139,7 @@ class Scraper:
 
             for card in cards:
                 try:
-                    record = extractor.extract_all()
+                    record = extractor.extract_all(scope=card)
                     if record.get("business_name") or record.get("email"):
                         record["source_url"] = page.url
                         self.records.append(record)

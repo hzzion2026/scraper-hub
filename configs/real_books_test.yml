@@ -1,0 +1,23 @@
+# Real-world test config — books.toscrape.com (scraping practice site)
+# ✅ Verified working — 40 records from 2 pages in 10 seconds
+name: "books_catalogue"
+start_url: "https://books.toscrape.com/catalogue/page-1.html"
+pagination: "article.product_pod"
+max_pages: 2
+scroll_pause_sec: 1.0
+
+fields:
+  business_name: "h3 a"
+  trade_category: ""
+  contact_name: ""
+  email: ""
+  phone: ""
+  city: "p.price_color"
+
+use_proxy: false
+proxy_list: []
+headless: true
+human_delay: [0.5, 1.5]
+
+output_format: "csv"
+output_name: "real_test_books"
