@@ -1,0 +1,26 @@
+# Example target config
+# Edit the fields below to match the website you want to scrape.
+name: "example_business_directory"
+start_url: "https://example.com/businesses"
+pagination: ".listing-item, .result-card, .business-entry"
+max_pages: 5
+scroll_pause_sec: 1.0
+
+# Field CSS selectors — update these for each target site
+fields:
+  business_name: "h2.business-name, .company-title a"
+  trade_category: ".category, .industry-tag"
+  contact_name: ".contact-person, .manager-name"
+  email: "a[href^='mailto:'], .email"
+  phone: ".phone, .tel"
+  city: ".location, .city-state"
+
+# Anti-detection
+use_proxy: false
+proxy_list: []
+  # - "user:pass@host:port"
+headless: true
+human_delay: [0.5, 2.0]
+
+# Output
+output_format: "csv"  # csv | json | excel
