@@ -1,0 +1,24 @@
+# ScraperHub real-world target config
+# ✅ Yelp Business Directory
+# Tested selectors — edit selectors if Yelp changes their HTML structure.
+name: "yelp_business_directory"
+start_url: "https://www.yelp.com/search?find_desc=Plumbers&find_loc=New+York%2C+NY"
+pagination: "[data-testid='search-results'] div[class*='container']"
+max_pages: 3
+scroll_pause_sec: 1.5
+
+fields:
+  business_name: "a[href*='/biz/'] h3, a[href*='/biz/'] span[class*='heading']"
+  trade_category: "span[class*='tag'], span[class*='category']"
+  contact_name: ""
+  email: ""
+  phone: "p[class*='phone'], a[href^='tel:']"
+  city: "span[class*='neighborhood'], span[class*='locality']"
+
+use_proxy: false
+proxy_list: []
+headless: true
+human_delay: [1.0, 3.0]
+
+output_format: "csv"
+output_name: "yelp_plumbers_nyc"

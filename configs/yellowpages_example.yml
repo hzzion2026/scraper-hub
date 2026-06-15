@@ -1,0 +1,23 @@
+# ScraperHub real-world target config
+# ✅ YellowPages Business Directory
+name: "yellowpages_business"
+start_url: "https://www.yellowpages.com/search?search_terms=Plumbing&geo_location_terms=Los+Angeles%2C+CA"
+pagination: "div[class*='result'], div.search-result"
+max_pages: 3
+scroll_pause_sec: 1.0
+
+fields:
+  business_name: "a.business-name, h2.n"
+  trade_category: "div.categories a, span.cat"
+  contact_name: ""
+  email: ""
+  phone: "div.phone, span.phone"
+  city: "div.locality, span.locality"
+
+use_proxy: false
+proxy_list: []
+headless: true
+human_delay: [0.8, 2.5]
+
+output_format: "csv"
+output_name: "yellowpages_plumbers_la"

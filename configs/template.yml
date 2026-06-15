@@ -1,0 +1,37 @@
+# ScraperHub target config — generic template
+# Copy this file and fill in your target URL + CSS selectors.
+name: "my_target_directory"
+start_url: "https://example.com/directory"
+
+# How items are listed on each page
+pagination: ".listing-item, .result-card"
+
+# How many pages to scrape
+max_pages: 5
+
+# Pause between actions (seconds)
+scroll_pause_sec: 1.0
+
+# CSS selectors for each field
+# Leave blank ("") if the field isn't available on this site
+fields:
+  business_name: "h2.business-name, .company-title a"
+  trade_category: ".category, .industry-tag"
+  contact_name: ".contact-person"
+  email: "a[href^='mailto:'], .email-link"
+  phone: ".phone, .tel, [data-phone]"
+  city: ".location, .city, .address-city"
+
+# Proxy rotation (optional)
+use_proxy: false
+proxy_list:
+  # - "user:pass@host:port"
+
+# Run browser in background (true) or visible (false)
+headless: true
+
+# Mimic human browsing delays (min, max seconds)
+human_delay: [0.5, 2.0]
+
+# Output format: csv | json | excel
+output_format: "csv"

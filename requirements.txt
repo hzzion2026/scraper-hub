@@ -8,3 +8,4 @@ loguru>=0.7
 click>=8.0
 colorama>=0.4
 fake-useragent>=1.4
+tqdm>=4.64
